@@ -1,7 +1,5 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { PersonsModule } from './persons/person.module';
 
 @Module({
@@ -15,11 +13,12 @@ import { PersonsModule } from './persons/person.module';
           username: 'mongo',
           password: 'mongo',
         },
+        dbName: 'hr-assistant'
       },
     ),
     PersonsModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {}

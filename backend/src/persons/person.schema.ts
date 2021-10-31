@@ -3,23 +3,18 @@ import { Document } from 'mongoose';
 
 export type PersonDocument = Person & Document;
 
-@Schema()
+@Schema({ collection: 'person' })
 export class Person {
-  @Prop()
+  @Prop({ required: true })
   firstName: string;
-
-  @Prop()
+  @Prop({ required: true })
   lastName: string;
-
   @Prop()
   middleName: string;
-
   @Prop()
   dateOfBirth: Date;
-
   @Prop()
-  post: string;
-  
+  post: string;  
   @Prop()
   linkToPhoto: string;
 }
