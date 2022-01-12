@@ -13,5 +13,16 @@ services:
     volumes:
       - mongodata:/data/db
 
+  back-java:
+      build: ./backend-java        
+      container_name: backend-java 
+      restart: always
+      environment:
+        SPRING_DATA_MONGODB_URI: mongodb://mongo:mongo@mongo:27017/
+      ports:
+        - "8080:8080"
+      links:
+        - mongo
+          
 volumes:
   mongodata:
