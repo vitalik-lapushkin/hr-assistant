@@ -16,6 +16,7 @@ import java.util.List;
  * @version 12.01.2022
  */
 @RestController
+@CrossOrigin
 @RequiredArgsConstructor
 @RequestMapping("/rest/person")
 public class PersonController {
