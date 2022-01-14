@@ -3,3 +3,11 @@ spring:
     mongodb:
       uri: mongodb://mongo:mongo@localhost:27017/
       database: hr-assistant
+  mvc:
+    static-path-pattern: /static/**
+  web:
+    resources:
+      static-locations: file:/opt/static
+
+filestorage:
+  path: /opt/static

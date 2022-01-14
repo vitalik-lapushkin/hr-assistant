@@ -19,10 +19,13 @@ services:
       restart: always
       environment:
         SPRING_DATA_MONGODB_URI: mongodb://mongo:mongo@mongo:27017/
+        SPRING_WEB_RESOURCES_STATIC-LOCATIONS: file:/opt/static
       ports:
         - "8080:8080"
       links:
         - mongo
+      volumes:
+        - staticfiles:/opt/static
 
   frontend-react:
     build: ./frontend-react
@@ -35,3 +38,4 @@ services:
           
 volumes:
   mongodata:
+  staticfiles:

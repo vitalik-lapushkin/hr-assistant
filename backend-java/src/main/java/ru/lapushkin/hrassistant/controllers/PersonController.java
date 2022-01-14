@@ -37,7 +37,7 @@ public class PersonController {
         return new ResponseEntity<>(service.update(id, dto), HttpStatus.OK);
     }
 
-    @DeleteMapping()
+    @DeleteMapping
     ResponseEntity deleteById(@RequestParam String id) {
         service.deleteById(id);
         return new ResponseEntity(HttpStatus.OK);
